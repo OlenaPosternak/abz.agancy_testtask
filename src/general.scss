@@ -1,0 +1,66 @@
+@import 'variables';
+
+.container {
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media screen and (min-width: 360px) {
+    width: 360px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 1024px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  @media screen and (min-width: 2560px) {
+    width: 2560px;
+    padding-left: 696px;
+    padding-right: 696px;
+  }
+}
+
+.section {
+  padding-top: 140px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  color: $textColor;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+
+  width: 100px;
+  height: 34px;
+  line-height: 34px;
+  border-radius: 80px;
+
+  font-size: $mainFontSizes;
+  font-family: 'Nunito';
+
+  background-color: $primaryColor;
+  color: $textColor;
+
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $hoverBtnColor;
+  }
+}

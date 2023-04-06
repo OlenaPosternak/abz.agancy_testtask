@@ -1,0 +1,60 @@
+@import 'variables';
+.container{
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 71px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $backgroundHero;
+    background-image: url('../../img/imageBackGround.jpg');
+    background-size:cover;
+  
+    color: $mainWhite;
+    text-align: center;
+  
+    @media screen and (min-width: 360px) {
+      width: 360px;
+    }
+  
+    @media screen and (min-width: 768px) {
+      width: 768px;
+      padding: 89px 194px 88px 194px;
+    }
+  
+    @media screen and (min-width: 1024px) {
+      width: 1024px;
+      padding: 164px 322px 163px 322px;
+
+    }
+    @media screen and (min-width: 2560px) {
+      width: 1170px;
+      padding: 164px 395px 163px 395px;
+    }
+}
+// .hero {
+//   margin: 0 auto;
+//   padding-top: 40px;
+//   padding-bottom: 71px;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-color: $backgroundHero;
+//   background-image: url('../../img/imageBackGround.jpg');
+
+//   color: $mainWhite;
+//   text-align: center;
+  
+// }
+
+.title {
+  margin-bottom: 21px;
+  font-size: $TitleFontSize;
+}
+
+
+.content {
+margin-bottom: 32px;
+}

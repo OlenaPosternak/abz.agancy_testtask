@@ -1,0 +1,16 @@
+@import 'variables';
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+.authNav {
+  display: flex;
+  width: 210px;
+  gap: 10px;
+  color: $primaryColor;
+}
