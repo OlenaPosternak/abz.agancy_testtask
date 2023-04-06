@@ -5,7 +5,7 @@ import { ListOfUsers } from '../UserList/UserList';
 import { useEffect, useState } from 'react';
 import { fetchUsers } from '../../fetchApi/fetchApi';
 
-import styles from './MainPage.module.scss'
+import styles from './MainPage.module.scss';
 
 export const MainPage = () => {
   const [users, setUsers] = useState([]);
@@ -29,7 +29,7 @@ export const MainPage = () => {
 
   return (
     <main className={styles.wrapper}>
-        <Hero/>
+      <Hero />
       <ListOfUsers
         users={users}
         page={page}

@@ -27,7 +27,7 @@ export const LoginForm = ({ setUsers }) => {
     name: '',
     email: '',
     phone: '',
-    position_id: '',
+    position_id: '1',
     photo: '',
   };
 
@@ -37,7 +37,7 @@ export const LoginForm = ({ setUsers }) => {
     });
   }, []);
 
-  const [file, setFile] = useState();
+  const [file, setFile] = useState(null);
 
   const onChangePhoto = async event => {
     event.preventDefault();
@@ -74,7 +74,7 @@ export const LoginForm = ({ setUsers }) => {
           // validationSchema={loginSchema}
           onSubmit={handleSubmit}
         >
-          <Form autoComplete="off">
+          <Form autoComplete="off" className={styles.form}>
             <div className={styles.input_group}>
               <div className={styles.input_container}>
                 <Field
@@ -113,29 +113,45 @@ export const LoginForm = ({ setUsers }) => {
                   Phone
                 </label>
                 <ErrorMessage name="email" component="div" />
+                <p className={styles.helper}>+38 (XXX) XXX - XX - XX</p>
               </div>
             </div>
             <div>
+              <p className={styles.form_title}>Select your position</p>
               {positions.map(pos => (
                 <div key={pos.id}>
-                  <Field
-                    type="radio"
-                    name="position_id"
-                    value={pos.id.toString()}
-                    id={pos.name}
-                  />
-                  <label htmlFor={pos.name}>
-                    <span>{pos.name}</span>
+                  <label className={styles.checkbox_label}>
+                    <Field
+                      className={styles.checkbox}
+                      type="radio"
+                      name="position_id"
+                      value={pos.id.toString()}
+                      id={pos.name}
+                    />
+                    <span className={styles.checkbox_icon}></span>
+                    <span className={styles.checkbox_icon__checked}></span>
+                    {pos.name}
                   </label>
                 </div>
               ))}
             </div>
-            <Field
-              type="file"
-              name="photo"
-              accept=".jpg, .jpeg"
-              onChange={onChangePhoto}
-            />
+            <label className={styles.label_file}>
+              <Field
+                className={styles.input_file}
+                type="file"
+                name="photo"
+                accept=".jpg, .jpeg"
+                onChange={onChangePhoto}
+              />
+              <div className={styles.upload}>Upload</div>
+              <div className={styles.upload_file}>
+                <span style={{ display: !file ? 'block' : 'none' }}>
+
+                Upload your photo
+                </span>
+              {file? <p>{file.name}</p>:""}
+              </div>
+            </label>
             <button type="submit">Send message</button>
           </Form>
         </Formik>

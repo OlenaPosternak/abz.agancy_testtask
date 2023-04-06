@@ -7,7 +7,7 @@ import {BrowserRouter} from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter  basename="react-homework-template">
+    <BrowserRouter  basename="abz.agancy_testtask">
       <App />
     </BrowserRouter>
   </React.StrictMode>

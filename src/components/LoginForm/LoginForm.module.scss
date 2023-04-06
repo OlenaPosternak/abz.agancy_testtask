@@ -1,5 +1,8 @@
 @import 'variables';
 
+.form {
+  margin-top: 50px;
+}
 .input_group {
   display: flex;
   flex-direction: column;
@@ -24,18 +27,109 @@
 
 .label {
   position: absolute;
+  display: inline-block;
   left: 16px;
-  top: 14px;
+  top: 50%px;
+  transform: translateY(50%);
   padding: 0px 4px;
   color: $placeholderText;
+
+  transition: transform 250ms linear;
 }
 
 .input:focus-within + label {
+  transform: translateY(0%);
+  background-color: $backgroundColor;
+}
+
+.input:focus-within + .label,
+input:not(:placeholder-shown) + .label {
   top: -14px;
   background-color: $backgroundColor;
 }
 
-.input:focus-within + .label, input:not(:placeholder-shown) + .label {
-    top: -14px;
-    background-color: $backgroundColor;
-  }
+.helper {
+  margin-left: 16px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: $placeholderText;
+}
+
+.form_title {
+  margin-top: 25px;
+  margin-bottom: 11px;
+}
+
+.checkbox {
+  appearance: none;
+  position: absolute;
+}
+.checkbox_label {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.checkbox_icon {
+  display: inline-block;
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $secondaryColor;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.checkbox_icon__checked {
+  position: absolute;
+  opacity: 0;
+
+  left: 5px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid $secondaryColor;
+  background-color: $secondaryColor;
+  border-radius: 50%;
+}
+.checkbox:checked ~ .checkbox_icon__checked {
+  opacity: 1;
+}
+
+.input_file {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.label_file {
+  display: flex;
+}
+
+.upload {
+  padding: 14px 15px;
+  width: 83px;
+  height: 54px;
+  border: 1px solid $textColor;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.upload_file {
+  padding: 16px 14px;
+  color: $placeholderText;
+  width: 243px;
+  height: 54px;
+  border: 1px solid $inputBorder;
+
+}
+
+
