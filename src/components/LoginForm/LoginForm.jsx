@@ -146,13 +146,12 @@ export const LoginForm = ({ setUsers }) => {
               <div className={styles.upload}>Upload</div>
               <div className={styles.upload_file}>
                 <span style={{ display: !file ? 'block' : 'none' }}>
-
-                Upload your photo
+                  Upload your photo
                 </span>
-              {file? <p>{file.name}</p>:""}
+                {file ? <p>{file.name}</p> : ''}
               </div>
             </label>
-            <button type="submit">Send message</button>
+            <button className='button' type="submit">Sign up</button>
           </Form>
         </Formik>
       </div>
