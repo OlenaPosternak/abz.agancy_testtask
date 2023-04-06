@@ -8,7 +8,7 @@ export const ListOfUsers = ({ users, page, setPage, totalPages }) => {
   const ref = createRef();
   return (
     <section className="section">
-      <div className="container">
+      <div className={`container ${styles.wrapper}`}>
         <h2 className="title" id="users" ref={ref}>
           Working with GET request
         </h2>
@@ -21,17 +21,16 @@ export const ListOfUsers = ({ users, page, setPage, totalPages }) => {
                     className={styles.image}
                     alt="userPhoto"
                   />
-                  <p>{user.name}</p>
-                  <div>
-                    <p>{user.position}</p>
-                    <p>{user.email}</p>
-                    <p>{user.phone}</p>
-                  </div>
+                  <p className={styles.user_name}>{user.name}</p>
+
+                  <p className={styles.text}>{user.position}</p>
+                  <p className={styles.text}>{user.email}</p>
+                  <p className={styles.text}>{user.phone}</p>
                 </li>
               ))
             : 'No users here yet'}
         </ul>
-        {totalPages > page && <button onClick={handleClick}>Show more</button>}
+        {totalPages > page && <button className='button' onClick={handleClick}>Show more</button>}
       </div>
     </section>
   );

@@ -1,0 +1,41 @@
+@import 'variables';
+
+.input_group {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.input_container {
+  position: relative;
+}
+
+.input {
+  width: 328px;
+  height: 54px;
+  border: 1px solid $inputBorder;
+  border-radius: 4px;
+
+  padding: 14px 16px 14px 16px;
+
+  outline: none;
+  background-color: $backgroundColor;
+}
+
+.label {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  padding: 0px 4px;
+  color: $placeholderText;
+}
+
+.input:focus-within + label {
+  top: -14px;
+  background-color: $backgroundColor;
+}
+
+.input:focus-within + .label, input:not(:placeholder-shown) + .label {
+    top: -14px;
+    background-color: $backgroundColor;
+  }

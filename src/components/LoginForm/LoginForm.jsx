@@ -18,6 +18,8 @@ import { Field, Form, ErrorMessage } from 'formik';
 //   photo: yup.string().required(),
 // });
 
+import styles from './LoginForm.module.scss';
+
 export const LoginForm = ({ setUsers }) => {
   const [positions, setPositions] = useState([]);
 
@@ -62,48 +64,82 @@ export const LoginForm = ({ setUsers }) => {
   const ref = createRef();
 
   return (
-    <>
-      <h2 id="signUp" ref={ref}>
-        Working with POST request
-      </h2>
-      <Formik
-        initialValues={values}
-        // validationSchema={loginSchema}
-        onSubmit={handleSubmit}
-      >
-        <Form autoComplete="off">
-          <Field type="text" name="name" placeholder="Your name" />
-          <ErrorMessage name="name" component="div" />
-
-          <Field type="text" name="email" placeholder="Email" />
-          <ErrorMessage name="email" component="div" />
-
-          <Field type="text" name="phone" placeholder="Phone" />
-          <ErrorMessage name="email" component="div" />
-          <div>
-            {positions.map(pos => (
-              <div key={pos.id}>
+    <section className="section">
+      <div className="container">
+        <h2 id="signUp" className="title" ref={ref}>
+          Working with POST request
+        </h2>
+        <Formik
+          initialValues={values}
+          // validationSchema={loginSchema}
+          onSubmit={handleSubmit}
+        >
+          <Form autoComplete="off">
+            <div className={styles.input_group}>
+              <div className={styles.input_container}>
                 <Field
-                  type="radio"
-                  name="position_id"
-                  value={pos.id.toString()}
-                  id={pos.name}
+                  className={styles.input}
+                  type="text"
+                  name="name"
+                  placeholder=" "
                 />
-                <label htmlFor={pos.name}>
-                  <span>{pos.name}</span>
+                <label htmlFor="name" className={styles.label}>
+                  Your name
                 </label>
+                <ErrorMessage name="name" component="div" />
               </div>
-            ))}
-          </div>
-          <Field
-            type="file"
-            name="photo"
-            accept=".jpg, .jpeg"
-            onChange={onChangePhoto}
-          />
-          <button type="submit">Send message</button>
-        </Form>
-      </Formik>
-    </>
+
+              <div className={styles.input_container}>
+                <Field
+                  className={styles.input}
+                  type="text"
+                  name="email"
+                  placeholder=" "
+                />
+                <label htmlFor="Email" className={styles.label}>
+                  Email
+                </label>
+                <ErrorMessage name="email" component="div" />
+              </div>
+
+              <div className={styles.input_container}>
+                <Field
+                  className={styles.input}
+                  type="text"
+                  name="phone"
+                  placeholder=" "
+                />
+                <label htmlFor="Phone" className={styles.label}>
+                  Phone
+                </label>
+                <ErrorMessage name="email" component="div" />
+              </div>
+            </div>
+            <div>
+              {positions.map(pos => (
+                <div key={pos.id}>
+                  <Field
+                    type="radio"
+                    name="position_id"
+                    value={pos.id.toString()}
+                    id={pos.name}
+                  />
+                  <label htmlFor={pos.name}>
+                    <span>{pos.name}</span>
+                  </label>
+                </div>
+              ))}
+            </div>
+            <Field
+              type="file"
+              name="photo"
+              accept=".jpg, .jpeg"
+              onChange={onChangePhoto}
+            />
+            <button type="submit">Send message</button>
+          </Form>
+        </Formik>
+      </div>
+    </section>
   );
 };
