@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/abz.agancy_testtask.git/static/css/main.e3faf645.css",
+    "main.js": "/abz.agancy_testtask.git/static/js/main.ca41566a.js",
+    "static/media/imageBackGround.jpg": "/abz.agancy_testtask.git/static/media/imageBackGround.2011185026f3c5813f15.jpg",
+    "static/media/Logo.svg": "/abz.agancy_testtask.git/static/media/Logo.0e017b87089c4474de39dc9dce3c3d1d.svg",
+    "index.html": "/abz.agancy_testtask.git/index.html",
+    "main.e3faf645.css.map": "/abz.agancy_testtask.git/static/css/main.e3faf645.css.map",
+    "main.ca41566a.js.map": "/abz.agancy_testtask.git/static/js/main.ca41566a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e3faf645.css",
+    "static/js/main.ca41566a.js"
+  ]
+}
