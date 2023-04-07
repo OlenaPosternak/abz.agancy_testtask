@@ -2,6 +2,21 @@
 
 .form {
   margin-top: 50px;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 162px;
+    padding-right: 162px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-left: 262px;
+    padding-right: 262px;
+  }
+
+  @media screen and (min-width: 2560px) {
+    padding-left: 395px;
+    padding-right: 395px;
+  }
 }
 .input_group {
   display: flex;
@@ -76,9 +91,12 @@ input:not(:placeholder-shown) + .label {
   margin-right: 12px;
   width: 20px;
   height: 20px;
-  border: 1px solid $secondaryColor;
+  border: 1px solid $inputBorder;
   border-radius: 50%;
   background-color: white;
+}
+.checkbox:checked ~ .checkbox_icon {
+  border-color: $secondaryColor;
 }
 
 .checkbox_icon__checked {
@@ -89,7 +107,6 @@ input:not(:placeholder-shown) + .label {
   display: inline-block;
   width: 10px;
   height: 10px;
-  border: 1px solid $secondaryColor;
   background-color: $secondaryColor;
   border-radius: 50%;
 }
@@ -131,7 +148,8 @@ input:not(:placeholder-shown) + .label {
   width: 243px;
   height: 54px;
   border: 1px solid $inputBorder;
-
 }
 
-
+.btn_wrapper {
+  text-align: center;
+}

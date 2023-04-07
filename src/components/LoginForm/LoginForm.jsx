@@ -151,7 +151,11 @@ export const LoginForm = ({ setUsers }) => {
                 {file ? <p>{file.name}</p> : ''}
               </div>
             </label>
-            <button className='button' type="submit">Sign up</button>
+            <div className={styles.btn_wrapper}>
+              <button className="button" type="submit">
+                Sign up
+              </button>
+            </div>
           </Form>
         </Formik>
       </div>

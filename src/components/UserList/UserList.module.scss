@@ -46,14 +46,33 @@
   height: 70px;
 }
 
+.tooltip__wrapper {
+  position: relative;
+  cursor: pointer;
+}
 .user_name {
   margin-bottom: 20px;
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .text {
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.user_name[tooltip]:hover:after,
+.text[tooltip]:hover:after {
+  content: attr(tooltip);
+  position: absolute;
+  top: 47px;
+  left: 50%;
+  transform: translateX(-16px);
+  background-color: $textColor;
+  color: $mainWhite;
+  padding: 3px 16px;
+  border-radius: 4px;
+  overflow: visible;
 }

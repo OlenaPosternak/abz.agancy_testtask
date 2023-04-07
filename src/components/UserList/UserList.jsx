@@ -6,6 +6,7 @@ export const ListOfUsers = ({ users, page, setPage, totalPages }) => {
     setPage(prev => (prev += 1));
   };
   const ref = createRef();
+
   return (
     <section className="section">
       <div className={`container ${styles.wrapper}`}>
@@ -21,16 +22,29 @@ export const ListOfUsers = ({ users, page, setPage, totalPages }) => {
                     className={styles.image}
                     alt="userPhoto"
                   />
-                  <p className={styles.user_name}>{user.name}</p>
+                  <div className={styles.tooltip__wrapper}>
+                    <p className={styles.user_name} tooltip={user.name}>
+                      {user.name}
+                    </p>
+                  </div>
 
                   <p className={styles.text}>{user.position}</p>
-                  <p className={styles.text}>{user.email}</p>
+                  <div className={styles.tooltip__wrapper}>
+
+                  <p className={styles.text} tooltip={user.email}>
+                    {user.email}
+                  </p>
+                  </div>
                   <p className={styles.text}>{user.phone}</p>
                 </li>
               ))
             : 'No users here yet'}
         </ul>
-        {totalPages > page && <button className='button' onClick={handleClick}>Show more</button>}
+        {totalPages > page && (
+          <button className="button" onClick={handleClick}>
+            Show more
+          </button>
+        )}
       </div>
     </section>
   );
