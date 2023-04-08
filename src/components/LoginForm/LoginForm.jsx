@@ -38,8 +38,6 @@ export const LoginForm = ({ setUsers }) => {
         setFile(null);
       }
 
-      console.log(file);
-
       const picture = event.target.files[0];
       const size = picture.size;
 
@@ -98,7 +96,7 @@ export const LoginForm = ({ setUsers }) => {
                   touched={touched}
                 />
                 <UserPositions />
-                <UploadPhoto imgUrl={imgUrl} file={file} setFile={setFile}/>
+                <UploadPhoto imgUrl={imgUrl} file={file} setFile={setFile} />
                 <RegisterBtn isValid={isValid} dirty={dirty} />
               </Form>
             );
