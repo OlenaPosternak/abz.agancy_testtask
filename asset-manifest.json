@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/abz.agancy_testtask.git/static/css/main.e3faf645.css",
-    "main.js": "/abz.agancy_testtask.git/static/js/main.ca41566a.js",
-    "static/media/imageBackGround.jpg": "/abz.agancy_testtask.git/static/media/imageBackGround.2011185026f3c5813f15.jpg",
-    "static/media/Logo.svg": "/abz.agancy_testtask.git/static/media/Logo.0e017b87089c4474de39dc9dce3c3d1d.svg",
-    "index.html": "/abz.agancy_testtask.git/index.html",
-    "main.e3faf645.css.map": "/abz.agancy_testtask.git/static/css/main.e3faf645.css.map",
-    "main.ca41566a.js.map": "/abz.agancy_testtask.git/static/js/main.ca41566a.js.map"
+    "main.css": "/abz.agancy_testtask/static/css/main.58463696.css",
+    "main.js": "/abz.agancy_testtask/static/js/main.404bda41.js",
+    "static/media/imageBackGround.jpg": "/abz.agancy_testtask/static/media/imageBackGround.2011185026f3c5813f15.jpg",
+    "static/media/success-image.svg": "/abz.agancy_testtask/static/media/success-image.147ff01aeb0caaca03a3a94cfe9c0ce6.svg",
+    "static/media/Logo.svg": "/abz.agancy_testtask/static/media/Logo.0e017b87089c4474de39dc9dce3c3d1d.svg",
+    "index.html": "/abz.agancy_testtask/index.html",
+    "main.58463696.css.map": "/abz.agancy_testtask/static/css/main.58463696.css.map",
+    "main.404bda41.js.map": "/abz.agancy_testtask/static/js/main.404bda41.js.map"
   },
   "entrypoints": [
-    "static/css/main.e3faf645.css",
-    "static/js/main.ca41566a.js"
+    "static/css/main.58463696.css",
+    "static/js/main.404bda41.js"
   ]
 }
