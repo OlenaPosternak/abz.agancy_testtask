@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL =
   'https://frontend-test-assignment-api.abz.agency/api/v1';
@@ -17,6 +18,7 @@ export const fetchUsers = async page => {
     const response = await axios.get(`/users?page=${page}&count=6`);
     return response.data;
   } catch (e) {
+    toast.error(e.message);
     console.log(e);
   }
 };
@@ -26,6 +28,7 @@ export const fetchPositions = async () => {
     const response = await axios.get(`/positions`);
     return response.data;
   } catch (e) {
+    toast.error(e.message);
     console.log(e);
   }
 };
@@ -41,6 +44,7 @@ export const addUsers = async user => {
     });
     return response.data;
   } catch (e) {
+    toast.error(e.message);
     console.log(e.message);
   }
 };

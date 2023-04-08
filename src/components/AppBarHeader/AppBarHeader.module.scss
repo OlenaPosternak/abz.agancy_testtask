@@ -1,4 +1,6 @@
-@import 'variables';
+@import '../../CSSutils/variables.scss';
+
+
 .header {
   display: flex;
   align-items: center;
@@ -6,6 +8,10 @@
 
   padding-top: 17px;
   padding-bottom: 17px;
+}
+
+.logo {
+  cursor: pointer;
 }
 
 .authNav {

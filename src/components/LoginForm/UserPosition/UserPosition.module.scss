@@ -1,0 +1,46 @@
+@import '../../../CSSutils/variables.scss';
+
+.form_title {
+  margin-top: 25px;
+  margin-bottom: 11px;
+}
+
+.checkbox {
+  appearance: none;
+  position: absolute;
+}
+.checkbox_label {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.checkbox_icon {
+  display: inline-block;
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $inputBorder;
+  border-radius: 50%;
+  background-color: $mainWhite;
+}
+
+.checkbox:checked ~ .checkbox_icon {
+  border-color: $secondaryColor;
+}
+
+.checkbox_icon__checked {
+  position: absolute;
+  opacity: 0;
+
+  left: 5px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: $secondaryColor;
+  border-radius: 50%;
+}
+.checkbox:checked ~ .checkbox_icon__checked {
+  opacity: 1;
+}

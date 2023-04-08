@@ -30,10 +30,9 @@ export const ListOfUsers = ({ users, page, setPage, totalPages }) => {
 
                   <p className={styles.text}>{user.position}</p>
                   <div className={styles.tooltip__wrapper}>
-
-                  <p className={styles.text} tooltip={user.email}>
-                    {user.email}
-                  </p>
+                    <p className={styles.text} tooltip={user.email}>
+                      {user.email}
+                    </p>
                   </div>
                   <p className={styles.text}>{user.phone}</p>
                 </li>

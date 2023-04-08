@@ -1,176 +1,20 @@
-@import 'variables';
+@import '../../CSSutils/variables.scss';
 
 .form {
   margin-top: 50px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     padding-left: 162px;
     padding-right: 162px;
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $pcSizeM) {
     padding-left: 262px;
     padding-right: 262px;
   }
 
-  @media screen and (min-width: 2560px) {
+  @media screen and (min-width: $pc) {
     padding-left: 395px;
     padding-right: 395px;
   }
-}
-.input_group {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-
-.input_container {
-  position: relative;
-}
-
-.input {
-  position: relative;
-  width: 328px;
-  height: 54px;
-  border: 1px solid $inputBorder;
-  border-radius: 4px;
-
-  padding: 14px 16px 14px 16px;
-
-  outline: none;
-  background-color: $backgroundColor;
-  color: $inputText;
-}
-
-.input_error {
-  border-color: $errorColor;
-}
-
-.label {
-  position: absolute;
-  display: inline-block;
-  left: 16px;
-  top: 50%px;
-  transform: translateY(50%);
-  padding: 0px 4px;
-  color: $placeholderText;
-
-  transition: transform 250ms linear;
-
-  &_error {
-    color: $errorColor;
-  }
-}
-
-// .label_error{
-//     background-color: red;
-//     color: $errorColor;
-// }
-
-.input:focus + .label,
-input:not(:placeholder-shown) + .label {
-  transform: translateY(0%);
-  background-color: $backgroundColor;
-}
-
-.input:focus-within + .label,
-input:not(:placeholder-shown) + .label {
-  top: -14px;
-}
-
-.helper {
-  margin-left: 16px;
-  margin-top: 4px;
-  font-size: 12px;
-  color: $placeholderText;
-}
-
-.form_title {
-  margin-top: 25px;
-  margin-bottom: 11px;
-}
-
-.checkbox {
-  appearance: none;
-  position: absolute;
-}
-.checkbox_label {
-  display: flex;
-  align-items: center;
-
-  position: relative;
-}
-
-.checkbox_icon {
-  display: inline-block;
-  margin-right: 12px;
-  width: 20px;
-  height: 20px;
-  border: 1px solid $inputBorder;
-  border-radius: 50%;
-  background-color: white;
-}
-.checkbox:checked ~ .checkbox_icon {
-  border-color: $secondaryColor;
-}
-
-.checkbox_icon__checked {
-  position: absolute;
-  opacity: 0;
-
-  left: 5px;
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: $secondaryColor;
-  border-radius: 50%;
-}
-.checkbox:checked ~ .checkbox_icon__checked {
-  opacity: 1;
-}
-
-.input_file {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-.label_file {
-  display: flex;
-  margin-top: 47px;
-  margin-bottom: 50px;
-}
-
-.upload {
-  padding: 14px 15px;
-  width: 83px;
-  height: 54px;
-  border: 1px solid $textColor;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-
-.upload_file {
-  padding: 16px 14px;
-  color: $placeholderText;
-  width: 243px;
-  height: 54px;
-  border: 1px solid $inputBorder;
-}
-
-.btn_wrapper {
-  text-align: center;
-}
-
-.error {
-  position: absolute;
-  font-size: 12px;
-  color: $errorColor;
 }

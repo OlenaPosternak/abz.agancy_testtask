@@ -5,23 +5,23 @@
   padding-left: 16px;
   padding-right: 16px;
 
-  @media screen and (min-width: 360px) {
-    width: 360px;
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
   }
 
-  @media screen and (min-width: 768px) {
-    width: 768px;
+  @media screen and (min-width: $tablet) {
+    width: $tablet;
     padding-left: 32px;
     padding-right: 32px;
   }
 
-  @media screen and (min-width: 1024px) {
-    width: 1024px;
+  @media screen and (min-width: $pcSizeM) {
+    width: $pcSizeM;
     padding-left: 60px;
     padding-right: 60px;
   }
-  @media screen and (min-width: 2560px) {
-    width: 2560px;
+  @media screen and (min-width: $pc) {
+    width: $pc;
     padding-left: 696px;
     padding-right: 696px;
   }
@@ -29,6 +29,11 @@
 
 .section {
   padding-top: 140px;
+  transition: transform 2s ease;
+}
+
+.section:target {
+  transform: translateY(-100vh);
 }
 
 .title {
@@ -66,27 +71,26 @@
 }
 
 button:disabled,
-button[disabled]{
-
+button[disabled] {
   background-color: $disabledBtnColor;
   color: $mainWhite;
 
-  &:hover, &:focus{
+  &:hover,
+  &:focus {
     background-color: $disabledBtnColor;
     color: $mainWhite;
   }
 }
 
-
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-  }
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
