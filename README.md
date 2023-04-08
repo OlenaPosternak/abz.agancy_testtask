@@ -9,11 +9,10 @@ The user registration form included in the project uses Formik and Yup for valid
 
 ## Here are some test performances:
  Lighthouse
-
-<img src="./assets/lighthouse.png alt="lighthouse results">
+![Lighthouse](./assets/lighthouse.png)
 
 Google Page Speed:
+![Google Page Speed](./assets/googleSpeed.png)
 
-<img src="./assets/googleSpeed.png alt="Google Page Speed">
 
 This project was built as part of a test task for ABZ Agency. The design was provided by ABZ Agency.
