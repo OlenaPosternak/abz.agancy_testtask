@@ -29,6 +29,7 @@
 }
 
 .input {
+  position: relative;
   width: 328px;
   height: 54px;
   border: 1px solid $inputBorder;
@@ -38,6 +39,11 @@
 
   outline: none;
   background-color: $backgroundColor;
+  color: $inputText;
+}
+
+.input_error {
+  border-color: $errorColor;
 }
 
 .label {
@@ -50,9 +56,19 @@
   color: $placeholderText;
 
   transition: transform 250ms linear;
+
+  &_error {
+    color: $errorColor;
+  }
 }
 
-.input:focus-within + label {
+// .label_error{
+//     background-color: red;
+//     color: $errorColor;
+// }
+
+.input:focus + .label,
+input:not(:placeholder-shown) + .label {
   transform: translateY(0%);
   background-color: $backgroundColor;
 }
@@ -60,7 +76,6 @@
 .input:focus-within + .label,
 input:not(:placeholder-shown) + .label {
   top: -14px;
-  background-color: $backgroundColor;
 }
 
 .helper {
@@ -152,4 +167,10 @@ input:not(:placeholder-shown) + .label {
 
 .btn_wrapper {
   text-align: center;
+}
+
+.error {
+  position: absolute;
+  font-size: 12px;
+  color: $errorColor;
 }

@@ -65,6 +65,19 @@
   }
 }
 
+button:disabled,
+button[disabled]{
+
+  background-color: $disabledBtnColor;
+  color: $mainWhite;
+
+  &:hover, &:focus{
+    background-color: $disabledBtnColor;
+    color: $mainWhite;
+  }
+}
+
+
 .visually-hidden {
     position: absolute;
     width: 1px;
