@@ -1,11 +1,7 @@
 @import '../../CSSutils/variables.scss';
 
 .success_section {
+    margin-top: -80px;
   text-align: center;
-  margin-top: 50px;
   transition: all 0.5s ease-in-out;
-}
-
-.icon {
-  margin-top: 50px;
 }

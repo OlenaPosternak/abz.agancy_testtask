@@ -1,8 +1,8 @@
 import { ReactComponent as SuccessIcon } from '../../img/success-image.svg';
 import styles from './Success.module.scss';
-export const Success = ({ success }) => {
+export const Success = ({ success,  successRef }) => {
   return (
-    <div>
+    <div ref={successRef}>
       {success && (
         <div className={styles.success_section}>
           <h2 className="title">User successfully registered</h2>

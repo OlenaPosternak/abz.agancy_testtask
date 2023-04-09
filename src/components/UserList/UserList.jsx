@@ -7,6 +7,20 @@ export const ListOfUsers = ({ users, page, setPage, totalPages }) => {
   };
   const ref = createRef();
 
+  const formatedNumber = number => {
+    if (number) {
+      const countryCode = number.slice(0, 3);
+      const operatorCode = number.slice(3, 6);
+      const firstBlock = number.slice(6, 9);
+
+      const secondBlock = number.slice(9, 11);
+      const thirdBlock = number.slice(11, 13);
+      const formattedPhoneNumber = `${countryCode} (${operatorCode}) ${firstBlock} ${secondBlock} ${thirdBlock}`;
+
+      return formattedPhoneNumber;
+    }
+  };
+
   return (
     <section className="section">
       <div className={`container ${styles.wrapper}`}>
@@ -34,7 +48,7 @@ export const ListOfUsers = ({ users, page, setPage, totalPages }) => {
                       {user.email}
                     </p>
                   </div>
-                  <p className={styles.text}>{user.phone}</p>
+                  <p className={styles.text}>{formatedNumber(user.phone)}</p>
                 </li>
               ))
             : 'No users here yet'}

@@ -12,7 +12,7 @@ import styles from './LoginForm.module.scss';
 import { InputFields } from './InputGroup/InputGroup';
 import { UploadPhoto } from './UploadFile/UploadFile';
 
-export const LoginForm = ({ setUsers }) => {
+export const LoginForm = ({ setUsers, totalPages, setPage }) => {
   const [imgUrl, setImgUrl] = useState(null);
   const [file, setFile] = useState(null);
   const [success, setSuccess] = useState(false);
@@ -56,7 +56,8 @@ export const LoginForm = ({ setUsers }) => {
   const handleSubmit = async (values, { resetForm }) => {
     const formData = new FormData();
 
-    const phoneNumber = values.phone.replace(/\D/g, '');
+    // delating of all symbols and adding +
+    const phoneNumber = '+' + values.phone.replace(/\D/g, '');
 
     formData.append('name', values.name);
     formData.append('email', values.email);
@@ -69,7 +70,13 @@ export const LoginForm = ({ setUsers }) => {
     resetForm();
     setFile(null);
     setSuccess(true);
-    fetchUsers(1).then(data => setUsers(data.users));
+    fetchUsers(1).then(data => {
+      setUsers(data.users);
+      setPage(1)
+    });
+
+    // closing the notification
+    setTimeout(() => setSuccess(false), 5000);
   };
 
   return (

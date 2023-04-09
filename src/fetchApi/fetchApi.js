@@ -44,7 +44,7 @@ export const addUsers = async user => {
     });
     return response.data;
   } catch (e) {
-    toast.error(e.message);
-    console.log(e.message);
+    toast.error(e.response.data.message);
+    console.log(e);
   }
 };
