@@ -1,6 +1,6 @@
 import { ReactComponent as SuccessIcon } from '../../img/success-image.svg';
 import styles from './Success.module.scss';
-export const Success = ({ success,  successRef }) => {
+export const Success = ({ success, successRef }) => {
   return (
     <div ref={successRef}>
       {success && (

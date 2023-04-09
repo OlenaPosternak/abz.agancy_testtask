@@ -1,7 +1,7 @@
 import { Field } from 'formik';
 import styles from './UploadFile.module.scss';
 
-export const UploadPhoto = ({ imgUrl, file,setFile }) => {
+export const UploadPhoto = ({ imgUrl, file, setFile }) => {
   return (
     <label className={styles.label_file}>
       <Field
@@ -10,7 +10,7 @@ export const UploadPhoto = ({ imgUrl, file,setFile }) => {
         name="photo"
         accept=".jpg, .jpeg"
         value={imgUrl ? imgUrl : ''}
-        onClick={()=>file && setFile(null)}
+        onClick={() => file && setFile(null)}
       />
       <div className={styles.upload}>Upload</div>
       <div className={styles.upload_file}>

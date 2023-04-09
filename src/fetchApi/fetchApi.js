@@ -8,8 +8,9 @@ const getToken = async () => {
   try {
     const response = await axios.get('/token');
     return response.data.token;
-  } catch (error) {
-    console.log(error);
+  } catch (e) {
+    console.log(e);
+    throw new Error(e.response.data.message);
   }
 };
 
@@ -20,6 +21,7 @@ export const fetchUsers = async page => {
   } catch (e) {
     toast.error(e.message);
     console.log(e);
+    throw new Error(e.response.data.message);
   }
 };
 
@@ -30,6 +32,7 @@ export const fetchPositions = async () => {
   } catch (e) {
     toast.error(e.message);
     console.log(e);
+    throw new Error(e.response.data.message);
   }
 };
 
@@ -46,5 +49,6 @@ export const addUsers = async user => {
   } catch (e) {
     toast.error(e.response.data.message);
     console.log(e);
+    throw new Error(e.response.data.message);
   }
 };

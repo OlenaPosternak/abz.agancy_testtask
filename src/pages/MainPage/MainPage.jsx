@@ -43,7 +43,7 @@ export const MainPage = () => {
             setPage={setPage}
             totalPages={totalPages}
           />
-          <LoginForm setUsers={setUsers} setPage={setPage}/>
+          <LoginForm setUsers={setUsers} setPage={setPage} />
         </>
       )}
     </main>

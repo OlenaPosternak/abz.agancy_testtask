@@ -65,18 +65,22 @@ export const LoginForm = ({ setUsers, totalPages, setPage }) => {
     formData.append('position_id', values.position_id);
     formData.append('photo', file);
 
-    await addUsers(formData);
+    try {
+      await addUsers(formData);
 
-    resetForm();
-    setFile(null);
-    setSuccess(true);
-    fetchUsers(1).then(data => {
-      setUsers(data.users);
-      setPage(1)
-    });
+      resetForm();
+      setFile(null);
+      setSuccess(true);
+      fetchUsers(1).then(data => {
+        setUsers(data.users);
+        setPage(1);
+      });
 
-    // closing the notification
-    setTimeout(() => setSuccess(false), 5000);
+      // closing the notification
+      setTimeout(() => setSuccess(false), 5000);
+    } catch (error) {
+      console.log(`submit error`, error);
+    }
   };
 
   return (
